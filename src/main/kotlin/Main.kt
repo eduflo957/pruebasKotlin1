@@ -1,3 +1,4 @@
+import kotlin.random.Random
 fun main(args: Array<String>) {
     println("Hello World")
     //var es la variables
@@ -52,7 +53,23 @@ fun main(args: Array<String>) {
     repeatTorre();
     val array = arrayOf("hola", "adios")
     print(array.contentToString()) //También se puede con joinToString
-    pruebaListas()
+    //pruebaListas()
+    //ya tenemos la clase tenemos que crear el objeto con:
+    //val j1 = jugadorTest()
+    println("Dime datos del jugador: ")
+    var j1 = Jugador ()
+    j1.nombre = readln()
+    j1.numPartidasJugadas = readln().toInt()
+    j1.numHorasJugasas = readln().toInt()
+    j1.numKills = readln().toInt()
+    j1.numDead = readln().toInt()
+    println("Mi objeto es: \n"+ j1)
+
+
+
+
+
+
 }
 
 fun funReturningString(param1: Long): String {
@@ -139,18 +156,37 @@ fun repeatPiramide () {
     //Hacer en casa
 }
 
-fun pruebaListas () //Revisar en casa{
-//val listaAnimales = mutableListOf("Perro", "Gato", "Hamster")
-val listaRandom = mutableListOf<Int>()
-repeat (100) {
-    listaRandom.add(Math.random().toInt())
+/**********Me da error
+fun pruebaListas () {
+val listaRandom = mutableListOf(Random.nextInt(90,110)) {Random.nextInt(0,10) }
+val numero:Int = 0
+val listaResultado: kotlin.collections.mutableListOf()
+    for (i in 0<=..<9) {
+    var repetido = 0
+    for(numRandom in listaRandom) {
+        if (numRandom == numero) {
+            repetido++
+        }
+    }
+    listaResultado.add(numero, repetido)
 }
-print(listaRandom.toString())
+println(listaResultado.toString())
 }
+*/
 
 
-/*
+/**********************Transforma las siguientes funciones en Lambdas
+fun lambda_ejercicio1() {
+    println("Hola")
+}
+fun lambda_ejercicio2(integer : Int) {
+    println("Hola $integer")
+}
+fun lambda_ejercicio3(integer : Int, listInteger : List<Any>) {
+    println("Hola ${integer + listInteger.size}")
+}
+fun lambda_ejercicio4(integer : Int, listInteger : List<Any>) : Int {
+    return integer + listInteger.size
+}
+*/
 
-    for ((element, index) in lista.withIndex()){
-        print("$element,$index")
-    }*/
